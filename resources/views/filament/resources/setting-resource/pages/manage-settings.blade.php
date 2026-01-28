@@ -1,6 +1,6 @@
 <x-filament-panels::page>
     <form wire:submit="save">
-        {{ $form }}
+        {{ $this->form }}
 
         <x-filament-panels::form.actions
             :actions="$this->getCachedFormActions()"

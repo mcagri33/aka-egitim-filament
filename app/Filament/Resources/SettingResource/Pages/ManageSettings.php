@@ -13,7 +13,6 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\Page;
-use Illuminate\Contracts\Support\Htmlable;
 
 class ManageSettings extends Page implements HasForms
 {
@@ -21,16 +20,11 @@ class ManageSettings extends Page implements HasForms
 
     protected static string $resource = SettingResource::class;
 
+    protected static string $view = 'filament.resources.setting-resource.pages.manage-settings';
+
     protected static ?string $title = 'Ayarlar';
 
     public ?array $data = [];
-
-    public function getContent(): Htmlable
-    {
-        return view('filament.resources.setting-resource.pages.manage-settings', [
-            'form' => $this->form,
-        ]);
-    }
 
     public function mount(): void
     {
