@@ -4,11 +4,19 @@
             <div class="header-inner">
                 <div class="logo">
                     <a href="{{ route('home') }}">
-                        <div class="logo-icon"></div>
-                        <div class="logo-text">
-                            <div class="logo-title">AKAĞİTİM</div>
-                            <div class="logo-subtitle">Eğitim ve Danışmanlık Hizmetleri</div>
-                        </div>
+                        @php
+                            $siteLogo = \App\Models\Setting::get('site_logo');
+                        @endphp
+                        @if($siteLogo)
+                            <img src="{{ asset('storage/' . $siteLogo) }}" alt="AKA Academy" class="logo-image" onerror="this.parentElement.querySelector('.logo-text-only').style.display='flex'; this.style.display='none';">
+                            <div class="logo-text-only" style="display: none;">
+                                <div class="logo-title">AKA Academy</div>
+                            </div>
+                        @else
+                            <div class="logo-text-only">
+                                <div class="logo-title">AKA Academy</div>
+                            </div>
+                        @endif
                     </a>
                 </div>
                 

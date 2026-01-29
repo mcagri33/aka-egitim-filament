@@ -23,7 +23,7 @@
             </div>
 
             <div class="stat-card stat-card-left stat-card-left-bottom">
-                <h3 class="stat-number">{{ $totalOffices }}+</h3>
+                <h3 class="stat-number">50+</h3>
                 <span class="stat-label">{{ \App\Models\Setting::get('stats_offices_label_' . $currentLocale, 'Deneyimli Temsilci') }}</span>
             </div>
             

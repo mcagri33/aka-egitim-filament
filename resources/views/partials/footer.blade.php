@@ -16,13 +16,21 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col footer-col-main">
-                <div class="footer-logo">
-                    <div class="logo-icon"></div>
-                    <div class="logo-text">
-                        <div class="logo-title">AKAĞİTİM</div>
-                        <div class="logo-subtitle">Eğitim ve Danışmanlık Hizmetleri</div>
-                    </div>
-                </div>
+                       <div class="footer-logo">
+                           @php
+                               $siteLogo = \App\Models\Setting::get('site_logo');
+                           @endphp
+                           @if($siteLogo)
+                               <img src="{{ asset('storage/' . $siteLogo) }}" alt="AKA Academy" class="footer-logo-image" onerror="this.parentElement.querySelector('.logo-text-only').style.display='flex'; this.style.display='none';">
+                               <div class="logo-text-only" style="display: none;">
+                                   <div class="logo-title">AKA Academy</div>
+                               </div>
+                           @else
+                               <div class="logo-text-only">
+                                   <div class="logo-title">AKA Academy</div>
+                               </div>
+                           @endif
+                       </div>
                 @if($footerText)
                     <p class="footer-description">{{ $footerText }}</p>
                 @endif

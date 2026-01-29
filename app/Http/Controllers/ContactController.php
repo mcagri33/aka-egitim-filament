@@ -13,6 +13,12 @@ class ContactController extends Controller
 {
     public function submit(Request $request)
     {
+        // name ve surname varsa birleştir
+        $fullName = $request->name;
+        if ($request->has('surname') && $request->surname) {
+            $fullName = trim($request->name . ' ' . $request->surname);
+        }
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -20,7 +26,7 @@ class ContactController extends Controller
             'birth_date' => 'required|date',
             'program_type' => 'required|string|max:255',
             'language' => 'required|string|max:255',
-            'message' => 'nullable|string|max:1000',
+            'message' => 'nullable|string|max:2000',
         ]);
 
         if ($validator->fails()) {
@@ -29,15 +35,25 @@ class ContactController extends Controller
                 ->withInput();
         }
 
+        // city ve program bilgilerini message'a ekle
+        $fullMessage = $request->message ?? '';
+        if ($request->has('city') && $request->city) {
+            $fullMessage = "Şehir: " . $request->city . "\n\n" . $fullMessage;
+        }
+        if ($request->has('program') && $request->program) {
+            $fullMessage = "Program: " . $request->program . "\n\n" . $fullMessage;
+        }
+        $fullMessage = trim($fullMessage);
+
         // Veritabanına kayıt
         $contact = Contact::create([
-            'name' => $request->name,
+            'name' => $fullName,
             'email' => $request->email,
             'phone' => $request->phone,
             'birth_date' => $request->birth_date,
             'program_type' => $request->program_type,
             'language' => $request->language,
-            'message' => $request->message,
+            'message' => $fullMessage,
             'is_read' => false,
         ]);
 
