@@ -19,6 +19,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CountrySeeder::class,
             HomepageContentSeeder::class,
+            AboutPageSeeder::class,
+            LanguageSchoolsPageSeeder::class,
+            UniversityPageSeeder::class,
+            TeacherMobilityPageSeeder::class,
+            ContactPageSeeder::class,
         ]);
     }
 }
