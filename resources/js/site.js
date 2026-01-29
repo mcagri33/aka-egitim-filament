@@ -115,3 +115,89 @@
     };
     document.body.appendChild(s);
 }());
+
+// Header sticky davranışı - Scroll yapıldığında sabit kalır
+(function () {
+    function initStickyHeader() {
+        var header = document.querySelector('.header');
+        if (!header) {
+            return;
+        }
+        
+        var scrollThreshold = 50;
+        var headerHeight = 0;
+        var isSticky = false;
+        
+        // Header yüksekliğini hesapla
+        function updateHeaderHeight() {
+            headerHeight = header.offsetHeight;
+        }
+        
+        function setBodyPadding() {
+            if (isSticky && headerHeight > 0) {
+                document.body.style.paddingTop = headerHeight + 'px';
+                document.body.classList.add('has-sticky-header');
+            } else {
+                document.body.style.paddingTop = '0';
+                document.body.classList.remove('has-sticky-header');
+            }
+        }
+        
+        function handleScroll() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollThreshold) {
+                if (!isSticky) {
+                    updateHeaderHeight();
+                    header.classList.add('sticky');
+                    isSticky = true;
+                    setBodyPadding();
+                }
+            } else {
+                if (isSticky) {
+                    header.classList.remove('sticky');
+                    isSticky = false;
+                    setBodyPadding();
+                }
+            }
+        }
+        
+        // Resize'da header yüksekliğini güncelle
+        function handleResize() {
+            updateHeaderHeight();
+            if (isSticky) {
+                setBodyPadding();
+            }
+        }
+        
+        // Throttle için requestAnimationFrame kullan
+        var ticking = false;
+        function onScroll() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        // İlk yüklemede header yüksekliğini hesapla
+        updateHeaderHeight();
+        
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', handleResize);
+        
+        // İlk yüklemede kontrol et
+        setTimeout(function() {
+            handleScroll();
+        }, 100);
+    }
+    
+    // DOM yüklendiğinde çalıştır
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initStickyHeader);
+    } else {
+        initStickyHeader();
+    }
+}());
