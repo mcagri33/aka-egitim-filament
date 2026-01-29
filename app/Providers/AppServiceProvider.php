@@ -19,6 +19,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Session'dan dil ayarını yükle
+        if (session()->has('locale')) {
+            app()->setLocale(session('locale'));
+        } else {
+            // Varsayılan dili veritabanından al
+            $defaultLanguage = \App\Models\Language::where('is_default', true)
+                ->where('is_active', true)
+                ->first();
+            
+            if ($defaultLanguage) {
+                app()->setLocale($defaultLanguage->code);
+                session()->put('locale', $defaultLanguage->code);
+            }
+        }
     }
 }

@@ -1,0 +1,117 @@
+// Mobile menu toggle
+(function () {
+    var menuToggle = document.querySelector('.mobile-menu-toggle');
+    var navMenu = document.querySelector('.nav-menu');
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+        });
+    }
+}());
+
+// Language switcher
+(function () {
+    var languageSwitcher = document.querySelector('.language-switcher');
+    var languageCurrent = document.getElementById('languageCurrent');
+    var languageDropdown = document.getElementById('languageDropdown');
+    
+    // Sayfa yüklendiğinde dropdown'u kesinlikle gizle
+    if (languageDropdown) {
+        languageDropdown.style.display = 'none';
+        languageDropdown.style.opacity = '0';
+        languageDropdown.style.visibility = 'hidden';
+    }
+    
+    if (languageSwitcher && languageCurrent) {
+        languageCurrent.addEventListener('click', function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            var isActive = languageSwitcher.classList.contains('active');
+            
+            if (isActive) {
+                // Kapat
+                languageSwitcher.classList.remove('active');
+                if (languageDropdown) {
+                    languageDropdown.style.display = 'none';
+                    languageDropdown.style.opacity = '0';
+                    languageDropdown.style.visibility = 'hidden';
+                }
+            } else {
+                // Aç
+                languageSwitcher.classList.add('active');
+                if (languageDropdown) {
+                    languageDropdown.style.display = 'block';
+                    languageDropdown.style.opacity = '1';
+                    languageDropdown.style.visibility = 'visible';
+                }
+            }
+        });
+        
+        // Dışarı tıklandığında kapat
+        document.addEventListener('click', function (e) {
+            if (languageSwitcher && !languageSwitcher.contains(e.target)) {
+                languageSwitcher.classList.remove('active');
+                if (languageDropdown) {
+                    languageDropdown.style.display = 'none';
+                    languageDropdown.style.opacity = '0';
+                    languageDropdown.style.visibility = 'hidden';
+                }
+            }
+        });
+    }
+}());
+
+// Dünya haritası ülke tıklama
+(function () {
+    var countryPaths = document.querySelectorAll('.world-map path.country');
+    for (var i = 0; i < countryPaths.length; i++) {
+        (function (country) {
+            country.style.pointerEvents = 'auto';
+            country.addEventListener('click', function () {
+                var countryCode = country.getAttribute('data-country') || 'Seçilen ülke';
+                var countryName = country.getAttribute('data-name') || countryCode;
+                
+                // Ülke kodlarını isimlere çevir
+                var countryNames = {
+                    'KZ': 'Kazakistan',
+                    'GB': 'İngiltere',
+                    'UK': 'İngiltere',
+                    'FI': 'Finlandiya',
+                    'DE': 'Almanya',
+                    'CA': 'Kanada',
+                    'US': 'Amerika',
+                    'TR': 'Türkiye'
+                };
+                
+                var displayName = countryNames[countryCode] || countryCode;
+                alert(displayName + ' temsilciliği');
+            });
+        }(countryPaths[i]));
+    }
+}());
+
+// Instagram native embed
+(function () {
+    var urls = window.INSTAGRAM_POST_URLS;
+    if (!urls || !urls.length) return;
+    var grid = document.getElementById('instagram-feed');
+    if (!grid) return;
+    for (var i = 0; i < urls.length; i++) {
+        var wrap = document.createElement('div');
+        wrap.className = 'instagram-item';
+        var bq = document.createElement('blockquote');
+        bq.className = 'instagram-media';
+        bq.setAttribute('data-instgrm-permalink', urls[i]);
+        bq.setAttribute('data-instgrm-captioned', '');
+        wrap.appendChild(bq);
+        grid.appendChild(wrap);
+    }
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.instagram.com/embed.js';
+    s.onload = function () {
+        if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+    };
+    document.body.appendChild(s);
+}());

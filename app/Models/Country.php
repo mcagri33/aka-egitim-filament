@@ -28,6 +28,13 @@ class Country extends Model
 
     public function offices()
     {
-        return $this->hasManyThrough(Office::class, City::class);
+        return $this->hasManyThrough(
+            Office::class, 
+            City::class,
+            'country_id', // Foreign key on cities table
+            'city_id',   // Foreign key on offices table
+            'id',        // Local key on countries table
+            'id'         // Local key on cities table
+        );
     }
 }

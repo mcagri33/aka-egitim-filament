@@ -162,4 +162,14 @@ class ManageSettings extends Page implements HasForms
                 ->color('primary'),
         ];
     }
+
+    public function getCachedFormActions(): array
+    {
+        return $this->getFormActions();
+    }
+
+    public function hasFullWidthFormActions(): bool
+    {
+        return false;
+    }
 }
