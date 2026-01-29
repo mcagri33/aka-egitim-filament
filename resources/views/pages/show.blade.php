@@ -38,48 +38,64 @@
     /* Page Content */
     .page-content {
         padding: 80px 0;
-        background: #fafafa;
+        background: #f5f5f5;
     }
     
     .page-body {
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
-        background: var(--color-white);
-        padding: 60px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
     
-    /* Sections */
+    /* Sections - Her section bağımsız kart */
     .page-body section {
-        margin-bottom: 60px;
+        background: var(--color-white);
+        margin-bottom: 50px;
+        padding: 60px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .page-body section:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     }
     
     .page-body section:last-child {
         margin-bottom: 0;
     }
     
+    /* Section başlıkları için özel stil */
+    .page-body section > h2:first-child {
+        margin-top: 0;
+    }
+    
     /* Hero Section */
     .page-body .hero-section {
         text-align: center;
-        padding: 40px 0;
-        margin-bottom: 60px;
-        border-bottom: 2px solid var(--color-light-gray);
+        padding: 60px 50px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border: 2px solid var(--color-teal);
+        border-radius: 16px;
     }
     
     .page-body .hero-section h2 {
-        font-size: 32px;
+        font-size: 36px;
         font-weight: 600;
         color: var(--color-burgundy);
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         font-style: italic;
-        line-height: 1.4;
+        line-height: 1.5;
     }
     
     .page-body .hero-section p {
         font-size: 18px;
         color: var(--color-text-light);
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .page-body .world-map-placeholder,
@@ -89,45 +105,50 @@
     }
     
     /* Typography */
-    .page-body h2 {
-        font-size: 36px;
+    .page-body section h2 {
+        font-size: 38px;
         font-weight: 700;
-        margin: 50px 0 25px;
+        margin: 0 0 30px 0;
         color: var(--color-burgundy);
         position: relative;
-        padding-bottom: 15px;
+        padding-bottom: 20px;
+        border-bottom: 3px solid var(--color-light-gray);
     }
     
-    .page-body h2::after {
+    .page-body section h2::after {
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: -3px;
         left: 0;
-        width: 60px;
-        height: 4px;
+        width: 80px;
+        height: 3px;
         background: linear-gradient(90deg, var(--color-teal), var(--color-orange));
         border-radius: 2px;
     }
     
-    .page-body h3 {
-        font-size: 26px;
+    .page-body section h3 {
+        font-size: 28px;
         font-weight: 600;
-        margin: 35px 0 20px;
+        margin: 30px 0 20px 0;
         color: var(--color-teal);
     }
     
-    .page-body h4 {
-        font-size: 20px;
+    .page-body section h4 {
+        font-size: 22px;
         font-weight: 600;
-        margin: 25px 0 15px;
+        margin: 25px 0 15px 0;
         color: var(--color-text);
     }
     
-    .page-body p {
+    .page-body section p {
         font-size: 17px;
         line-height: 1.9;
         margin-bottom: 20px;
         color: var(--color-text);
+    }
+    
+    .page-body section p:last-child {
+        margin-bottom: 0;
     }
     
     .page-body ul,
@@ -152,19 +173,20 @@
         background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
         padding: 35px;
         border-radius: 12px;
-        margin: 35px 0;
+        margin: 25px 0;
         border-left: 5px solid var(--color-teal);
         box-shadow: 0 3px 15px rgba(0,0,0,0.08);
         transition: transform 0.3s, box-shadow 0.3s;
     }
     
     .page-body .highlight-box:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(0,0,0,0.15);
     }
     
     .page-body .highlight-box h3 {
         margin-top: 0;
+        margin-bottom: 15px;
         color: var(--color-teal);
         font-size: 24px;
     }
@@ -229,9 +251,7 @@
     
     /* FAQ Section */
     .page-body .faq-section {
-        margin-top: 60px;
-        padding-top: 40px;
-        border-top: 2px solid var(--color-light-gray);
+        background: var(--color-white);
     }
     
     .page-body .faq-item {
@@ -274,16 +294,17 @@
     /* Contact Section */
     .page-body .contact-section {
         background: linear-gradient(135deg, var(--color-teal) 0%, #1a7a73 100%);
-        padding: 40px;
-        border-radius: 12px;
+        padding: 50px;
+        border-radius: 16px;
         color: white;
         text-align: center;
-        margin: 50px 0;
+        box-shadow: 0 6px 30px rgba(32, 153, 144, 0.3);
     }
     
     .page-body .contact-section h2 {
         color: white;
         margin-top: 0;
+        border-bottom-color: rgba(255,255,255,0.3);
     }
     
     .page-body .contact-section h2::after {
@@ -296,14 +317,24 @@
         margin-bottom: 15px;
     }
     
+    /* About, Mission, Concept Sections */
+    .page-body .about-section,
+    .page-body .mission-section,
+    .page-body .concept-section {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    }
+    
+    /* Difference Section */
+    .page-body .difference-section {
+        background: var(--color-white);
+    }
+    
     /* Teacher Mobility & University Sections */
     .page-body .teacher-mobility-section,
     .page-body .university-section,
     .page-body .language-schools-section {
-        background: #f8f9fa;
-        padding: 40px;
-        border-radius: 12px;
-        margin: 40px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border: 1px solid var(--color-border);
     }
     
     .page-body .teacher-mobility-section ul,
@@ -338,16 +369,30 @@
             font-size: 36px;
         }
         
-        .page-body {
+        .page-content {
+            padding: 40px 0;
+        }
+        
+        .page-body section {
             padding: 30px 20px;
+            margin-bottom: 30px;
         }
         
-        .page-body h2 {
+        .page-body section h2 {
             font-size: 28px;
+            padding-bottom: 15px;
         }
         
-        .page-body h3 {
+        .page-body section h3 {
             font-size: 22px;
+        }
+        
+        .page-body .hero-section {
+            padding: 40px 20px;
+        }
+        
+        .page-body .hero-section h2 {
+            font-size: 26px;
         }
         
         .page-body .steps-list li {
@@ -361,12 +406,19 @@
             left: 15px;
         }
         
-        .page-body .highlight-box,
-        .page-body .contact-section,
+        .page-body .highlight-box {
+            padding: 25px 20px;
+            margin: 20px 0;
+        }
+        
+        .page-body .contact-section {
+            padding: 35px 20px;
+        }
+        
         .page-body .teacher-mobility-section,
         .page-body .university-section,
         .page-body .language-schools-section {
-            padding: 25px 20px;
+            padding: 30px 20px;
         }
     }
 </style>
