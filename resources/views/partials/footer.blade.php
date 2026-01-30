@@ -92,9 +92,9 @@
                         $itemTitle = $itemTranslation?->title ?? 'Menu';
                         $childItems = $footerItem->children()->where('is_active', true)->orderBy('order')->get();
                     @endphp
-                    @if($childItems->isNotEmpty())
-                        <div class="footer-col">
-                            <h4>{{ $itemTitle }}</h4>
+                    <div class="footer-col">
+                        <h4>{{ $itemTitle }}</h4>
+                        @if($childItems->isNotEmpty())
                             @foreach($childItems as $child)
                                 @php
                                     $childTranslation = $child->translations()->where('language_id', $currentLanguage?->id)->first();
@@ -106,8 +106,13 @@
                                 @endphp
                                 <a href="{{ $childUrl }}">{{ $childTitle }}</a>
                             @endforeach
-                        </div>
-                    @endif
+                        @else
+                            @php
+                                $itemUrl = $footerItem->url ?? '#';
+                            @endphp
+                            <a href="{{ $itemUrl }}">{{ $itemTitle }}</a>
+                        @endif
+                    </div>
                 @endforeach
             @endif
         </div>
