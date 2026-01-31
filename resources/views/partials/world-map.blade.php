@@ -14,10 +14,12 @@
         'TR' => ['id' => 'TR', 'class' => 'Turkey', 'name' => 'Türkiye'],
     ];
     
-    // Her ülke için ofis bilgilerini hazırla
+    // Tüm ülkeler için ofis bilgilerini hazırla (aktif olanlar için)
     $officesData = [];
-    foreach ($activeCountries as $country) {
-        $code = $country->code;
+    foreach ($countryMapping as $code => $mapping) {
+        $country = \App\Models\Country::where('code', $code)->first();
+        if (!$country) continue;
+        
         $offices = \App\Models\Office::whereHas('city', function($query) use ($country) {
             $query->where('country_id', $country->id);
         })->where('is_active', true)->with('city')->get();
@@ -33,7 +35,7 @@
         }
         
         $officesData[$code] = [
-            'name' => $countryMapping[$code]['name'] ?? $code,
+            'name' => $mapping['name'] ?? $code,
             'offices' => $officesList,
         ];
     }
@@ -53,7 +55,7 @@
             );
         }
         
-        // Aktif ülkeleri vurgula
+        // Aktif ülkeleri vurgula ve data-country attribute ekle
         foreach ($activeCountryCodes as $code) {
             if (!isset($countryMapping[$code])) continue;
             
@@ -80,9 +82,9 @@
                     '$1',
                     $svgContent
                 );
-                // Fill, stroke ve class ekle
+                // Fill, stroke, class ve data-country ekle
                 $pattern = '/(<path[^>]*id="' . preg_quote($id, '/') . '"[^>]*)(>)/i';
-                $replacement = '$1 fill="#ffffff" stroke="#209990" stroke-width="1.5" class="country country-active"$2';
+                $replacement = '$1 fill="#ffffff" stroke="#209990" stroke-width="1.5" class="country country-active" data-country="' . $code . '"$2';
                 $svgContent = preg_replace($pattern, $replacement, $svgContent);
             }
             
@@ -107,10 +109,25 @@
                     '$1',
                     $svgContent
                 );
-                // Class'ı güncelle ve fill, stroke ekle
+                // Class'ı güncelle, fill, stroke ve data-country ekle
                 $pattern = '/(<path[^>]*class=")([^"]*' . preg_quote($className, '/') . '[^"]*)(")/i';
-                $replacement = '$1$2 country country-active$3 fill="#ffffff" stroke="#209990" stroke-width="1.5"';
+                $replacement = '$1$2 country country-active$3 fill="#ffffff" stroke="#209990" stroke-width="1.5" data-country="' . $code . '"';
                 $svgContent = preg_replace($pattern, $replacement, $svgContent);
+            }
+        }
+        
+        // Tüm ülkeler için data-country attribute ekle (aktif olmayanlar için de)
+        foreach ($countryMapping as $code => $mapping) {
+            if (isset($mapping['id'])) {
+                $id = $mapping['id'];
+                // Eğer data-country yoksa ekle
+                if (strpos($svgContent, 'id="' . $id . '"') !== false && strpos($svgContent, 'data-country="' . $code . '"') === false) {
+                    $svgContent = preg_replace(
+                        '/(<path[^>]*id="' . preg_quote($id, '/') . '"[^>]*)(?!.*data-country)/i',
+                        '$1 data-country="' . $code . '"',
+                        $svgContent
+                    );
+                }
             }
         }
         
@@ -171,31 +188,65 @@
     };
     
     function getCountryCodeFromPath(path) {
+        // Önce data-country attribute'undan bul (en güvenilir)
+        var dataCountry = path.getAttribute('data-country');
+        if (dataCountry) {
+            return dataCountry;
+        }
+        
         // ID'den ülke kodunu bul
         var id = path.getAttribute('id');
-        if (id && countryCodeMap[id]) {
-            return countryCodeMap[id];
+        if (id) {
+            // Direkt ID'yi döndür (KZ, FI, DE, GB, TR, US, CA)
+            if (countryCodeMap[id]) {
+                return countryCodeMap[id];
+            }
+            // ID direkt ülke kodu olabilir
+            if (officesData[id]) {
+                return id;
+            }
+        }
+        
+        // Name attribute'undan bul
+        var name = path.getAttribute('name');
+        if (name) {
+            if (name === 'Kazakhstan') return 'KZ';
+            if (name === 'United Kingdom') return 'GB';
+            if (name === 'Finland') return 'FI';
+            if (name === 'Germany') return 'DE';
+            if (name === 'Canada') return 'CA';
+            if (name === 'United States') return 'US';
+            if (name === 'Turkey') return 'TR';
         }
         
         // Class'tan ülke kodunu bul
         var classList = path.classList;
         for (var i = 0; i < classList.length; i++) {
             var className = classList[i];
-            if (className === 'Kazakhstan') return 'KZ';
-            if (className === 'United Kingdom') return 'GB';
-            if (className === 'Finland') return 'FI';
-            if (className === 'Germany') return 'DE';
-            if (className === 'Canada') return 'CA';
-            if (className === 'United States') return 'US';
-            if (className === 'Turkey') return 'TR';
+            if (className === 'Kazakhstan' || className.indexOf('Kazakhstan') !== -1) return 'KZ';
+            if (className === 'United Kingdom' || className.indexOf('United Kingdom') !== -1) return 'GB';
+            if (className === 'Finland' || className.indexOf('Finland') !== -1) return 'FI';
+            if (className === 'Germany' || className.indexOf('Germany') !== -1) return 'DE';
+            if (className === 'Canada' || className.indexOf('Canada') !== -1) return 'CA';
+            if (className === 'United States' || className.indexOf('United States') !== -1) return 'US';
+            if (className === 'Turkey' || className.indexOf('Turkey') !== -1) return 'TR';
         }
         
         return null;
     }
     
     function showOfficeInfo(countryCode) {
+        if (!countryCode) {
+            console.log('Ülke kodu bulunamadı');
+            return;
+        }
+        
         var countryData = officesData[countryCode];
-        var countryName = countryNames[countryCode] || countryCode;
+        var countryName = countryNames[countryCode] || (countryData ? countryData.name : countryCode);
+        
+        // Debug için
+        console.log('Ülke Kodu:', countryCode);
+        console.log('Ülke Verisi:', countryData);
         
         if (!countryData || !countryData.offices || countryData.offices.length === 0) {
             alert(countryName + ' için temsilcilik bulunmamaktadır.');
