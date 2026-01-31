@@ -95,8 +95,12 @@
         $svgContent = preg_replace('/(<path[^>]*)(?!.*class=)(>)/i', '$1 class="country"$2', $svgContent);
         
         // SVG'yi responsive yap
+        // Width'i 100% yap
         $svgContent = preg_replace('/(<svg[^>]*width=")([^"]*)(")/i', '$1"100%"$3', $svgContent);
-        $svgContent = preg_replace('/(<svg[^>]*height=")([^"]*)(")/i', '$1"auto"$3', $svgContent);
+        // Height attribute'unu tamamen kaldır (viewBox ile otomatik hesaplanacak)
+        $svgContent = preg_replace('/\s+height="[^"]*"/i', '', $svgContent);
+        $svgContent = preg_replace('/\s+height=\'[^\']*\'/i', '', $svgContent);
+        // preserveAspectRatio ekle
         if (strpos($svgContent, 'preserveAspectRatio') === false) {
             $svgContent = preg_replace('/(<svg[^>]*)(>)/i', '$1 preserveAspectRatio="xMidYMid meet"$2', $svgContent);
         }
