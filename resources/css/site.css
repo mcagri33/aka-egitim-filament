@@ -980,6 +980,14 @@ button {
     height: 300px;
     position: relative;
     overflow: hidden;
+    background: var(--color-light-gray);
+}
+
+.why-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .why-image-1 {
@@ -993,9 +1001,15 @@ button {
     position: absolute;
     inset: 0;
     background: 
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent 70%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><circle cx="200" cy="150" r="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/><line x1="200" y1="70" x2="200" y2="230" stroke="rgba(255,255,255,0.3)" stroke-width="2"/><line x1="120" y1="150" x2="280" y2="150" stroke="rgba(255,255,255,0.3)" stroke-width="2"/></svg>');
-    opacity: 0.6;
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent 70%);
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.why-image-1 img {
+    position: relative;
+    z-index: 0;
 }
 
 .why-image-2 {
@@ -1009,9 +1023,15 @@ button {
     position: absolute;
     inset: 0;
     background: 
-        radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.3), transparent 60%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><path d="M200 50 L220 120 L290 120 L230 160 L250 230 L200 190 L150 230 L170 160 L110 120 L180 120 Z" fill="rgba(255,255,255,0.2)"/></svg>');
-    opacity: 0.5;
+        radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.3), transparent 60%);
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.why-image-2 img {
+    position: relative;
+    z-index: 0;
 }
 
 .why-content {

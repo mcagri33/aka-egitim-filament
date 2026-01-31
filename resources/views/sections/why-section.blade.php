@@ -11,7 +11,9 @@
         
         <div class="why-grid">
             <div class="why-card">
-                <div class="why-image why-image-1"></div>
+                <div class="why-image why-image-1">
+                    <img src="{{ asset('storage/banners/why-image-1.webp') }}" alt="Global Partner Ağımız" onerror="this.style.display='none';">
+                </div>
                 <div class="why-content">
                     <h3 class="why-title">{{ \App\Models\Setting::get('why_global_title_' . $currentLocale, 'Global Partner Ağımız') }}</h3>
                     <p class="why-description">{{ \App\Models\Setting::get('why_global_desc_' . $currentLocale, 'Onaylı kurum ağımızla programları güvenle karşılaştırır, en uygun rotayı belirleriz.') }}</p>
@@ -19,7 +21,9 @@
             </div>
             
             <div class="why-card">
-                <div class="why-image why-image-2"></div>
+                <div class="why-image why-image-2">
+                    <img src="{{ asset('storage/banners/why-image-2.webp') }}" alt="Öğrenci Gelecek Takibi" onerror="this.style.display='none';">
+                </div>
                 <div class="why-content">
                     <h3 class="why-title">{{ \App\Models\Setting::get('why_tracking_title_' . $currentLocale, 'Öğrenci Gelecek Takibi') }}</h3>
                     <p class="why-description">{{ \App\Models\Setting::get('why_tracking_desc_' . $currentLocale, 'Başvuru sonrası süreçte de yanında kalır; adaptasyon ve takip adımlarını planlarız.') }}</p>
