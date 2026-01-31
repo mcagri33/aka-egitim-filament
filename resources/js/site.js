@@ -62,34 +62,7 @@
     }
 }());
 
-// Dünya haritası ülke tıklama
-(function () {
-    var countryPaths = document.querySelectorAll('.world-map path.country');
-    for (var i = 0; i < countryPaths.length; i++) {
-        (function (country) {
-            country.style.pointerEvents = 'auto';
-            country.addEventListener('click', function () {
-                var countryCode = country.getAttribute('data-country') || 'Seçilen ülke';
-                var countryName = country.getAttribute('data-name') || countryCode;
-                
-                // Ülke kodlarını isimlere çevir
-                var countryNames = {
-                    'KZ': 'Kazakistan',
-                    'GB': 'İngiltere',
-                    'UK': 'İngiltere',
-                    'FI': 'Finlandiya',
-                    'DE': 'Almanya',
-                    'CA': 'Kanada',
-                    'US': 'Amerika',
-                    'TR': 'Türkiye'
-                };
-                
-                var displayName = countryNames[countryCode] || countryCode;
-                alert(displayName + ' temsilciliği');
-            });
-        }(countryPaths[i]));
-    }
-}());
+// Dünya haritası ülke tıklama - Blade'deki script ile yönetiliyor
 
 // Instagram native embed
 (function () {
