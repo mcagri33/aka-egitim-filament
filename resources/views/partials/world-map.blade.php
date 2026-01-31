@@ -14,24 +14,38 @@
         'TR' => ['id' => 'TR', 'class' => 'Turkey', 'name' => 'Türkiye'],
     ];
     
-    // Tüm ülkeler için ofis bilgilerini hazırla (aktif olanlar için)
+    // Tüm ülkeler için ofis bilgilerini hazırla
     $officesData = [];
     foreach ($countryMapping as $code => $mapping) {
         $country = \App\Models\Country::where('code', $code)->first();
-        if (!$country) continue;
+        if (!$country) {
+            // Ülke yoksa boş liste ekle
+            $officesData[$code] = [
+                'name' => $mapping['name'] ?? $code,
+                'offices' => [],
+            ];
+            continue;
+        }
         
-        $offices = \App\Models\Office::whereHas('city', function($query) use ($country) {
-            $query->where('country_id', $country->id);
-        })->where('is_active', true)->with('city')->get();
+        // Ülkeye ait şehirleri bul
+        $cities = \App\Models\City::where('country_id', $country->id)->pluck('id');
+        
+        // Bu şehirlerdeki aktif ofisleri bul
+        $offices = \App\Models\Office::whereIn('city_id', $cities)
+            ->where('is_active', true)
+            ->with('city')
+            ->get();
         
         $officesList = [];
         foreach ($offices as $office) {
-            $officesList[] = [
-                'city' => $office->city->name ?? '',
-                'address' => $office->address ?? '',
-                'phone' => $office->phone ?? '',
-                'email' => $office->email ?? '',
-            ];
+            if ($office->city) {
+                $officesList[] = [
+                    'city' => $office->city->name ?? '',
+                    'address' => $office->address ?? '',
+                    'phone' => $office->phone ?? '',
+                    'email' => $office->email ?? '',
+                ];
+            }
         }
         
         $officesData[$code] = [
@@ -237,38 +251,19 @@
     
     function showOfficeInfo(countryCode) {
         if (!countryCode) {
-            console.log('Ülke kodu bulunamadı');
             return;
         }
         
         var countryData = officesData[countryCode];
         var countryName = countryNames[countryCode] || (countryData ? countryData.name : countryCode);
         
-        // Debug için
-        console.log('Ülke Kodu:', countryCode);
-        console.log('Ülke Verisi:', countryData);
-        
         if (!countryData || !countryData.offices || countryData.offices.length === 0) {
             alert(countryName + ' için temsilcilik bulunmamaktadır.');
             return;
         }
         
-        var message = countryName + ' Temsilcilikleri:\n\n';
-        countryData.offices.forEach(function(office, index) {
-            message += (index + 1) + '. ' + (office.city || 'Temsilcilik') + '\n';
-            if (office.address) {
-                message += '   Adres: ' + office.address + '\n';
-            }
-            if (office.phone) {
-                message += '   Telefon: ' + office.phone + '\n';
-            }
-            if (office.email) {
-                message += '   E-posta: ' + office.email + '\n';
-            }
-            message += '\n';
-        });
-        
-        alert(message);
+        // Temsilcilik varsa basit mesaj göster
+        alert(countryName + ' Temsilciliğimiz');
     }
     
     // Tüm path'lere click event ekle
