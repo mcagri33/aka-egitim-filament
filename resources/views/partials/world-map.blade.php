@@ -14,43 +14,18 @@
         'TR' => ['id' => 'TR', 'class' => 'Turkey', 'name' => 'Türkiye'],
     ];
     
-    // Tüm ülkeler için ofis bilgilerini hazırla
+    // Tüm ülkeler için temsilcilik bilgilerini hazırla
+    // Aktif ülkeler = temsilciliğimiz var
     $officesData = [];
     foreach ($countryMapping as $code => $mapping) {
         $country = \App\Models\Country::where('code', $code)->first();
-        if (!$country) {
-            // Ülke yoksa boş liste ekle
-            $officesData[$code] = [
-                'name' => $mapping['name'] ?? $code,
-                'offices' => [],
-            ];
-            continue;
-        }
         
-        // Ülkeye ait şehirleri bul
-        $cities = \App\Models\City::where('country_id', $country->id)->pluck('id');
-        
-        // Bu şehirlerdeki aktif ofisleri bul
-        $offices = \App\Models\Office::whereIn('city_id', $cities)
-            ->where('is_active', true)
-            ->with('city')
-            ->get();
-        
-        $officesList = [];
-        foreach ($offices as $office) {
-            if ($office->city) {
-                $officesList[] = [
-                    'city' => $office->city->name ?? '',
-                    'address' => $office->address ?? '',
-                    'phone' => $office->phone ?? '',
-                    'email' => $office->email ?? '',
-                ];
-            }
-        }
+        // Ülke aktifse temsilciliğimiz var
+        $hasOffice = $country && $country->is_active;
         
         $officesData[$code] = [
             'name' => $mapping['name'] ?? $code,
-            'offices' => $officesList,
+            'hasOffice' => $hasOffice,
         ];
     }
     
@@ -257,7 +232,7 @@
         var countryData = officesData[countryCode];
         var countryName = countryNames[countryCode] || (countryData ? countryData.name : countryCode);
         
-        if (!countryData || !countryData.offices || countryData.offices.length === 0) {
+        if (!countryData || !countryData.hasOffice) {
             alert(countryName + ' için temsilcilik bulunmamaktadır.');
             return;
         }
