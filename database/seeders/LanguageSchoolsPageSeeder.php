@@ -30,10 +30,10 @@ class LanguageSchoolsPageSeeder extends Seeder
         // Kazakh Content
         if ($languages->has('kk')) {
             $this->createTranslation($page, $languages['kk'], [
-                'title' => 'Діл мектептері',
+                'title' => 'Тіл мектептері',
                 'slug' => 'dil-okullari',
                 'content' => $this->getKazakhContent(),
-                'seo_title' => 'Діл мектептері - AKA Академиясы',
+                'seo_title' => 'Тіл мектептері - AKA Академиясы',
                 'seo_description' => 'Ұлыбританияда ағылшын тілін үйреніңіз, мәдениетті тәжірибе етіңіз және British Council бекіткен діл мектептерінде білім алыңыз.',
             ]);
         }
@@ -90,21 +90,21 @@ class LanguageSchoolsPageSeeder extends Seeder
         return '<section class="language-schools-hero">
             <div class="container">
                 <div class="hero-breadcrumb">
-                    <a href="/">Басты бет</a> / Діл мектептері
+                    <a href="/">Басты бет</a> / Тіл мектептері
                 </div>
-                <h1 class="hero-title">Ұлыбритания діл мектебі бағдарламалары</h1>
-                <p class="hero-description">Ұлыбританияда ағылшын тілін үйреніңіз, мәдениетті тәжірибе етіңіз және British Council бекіткен діл мектептерінде білім алыңыз.</p>
+                <h1 class="hero-title">Ұлыбритания тіл мектебі бағдарламалары</h1>
+                <p class="hero-description">Ұлыбританияда ағылшын тілін үйреніңіз, мәдениетімен танысыңыз және British Council бекіткен тіл мектептерінде білім алыңыз.</p>
                 <a href="#programs" class="hero-cta">Бағдарламаларды қарау</a>
             </div>
         </section>
 
         <section class="why-language-section">
             <div class="container">
-                <h2 class="section-title">Неге Ұлыбританияда діл білім беру?</h2>
+                <h2 class="section-title">Неліктен Ұлыбританияда тіл үйрену?</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">⭐</div>
-                        <h3>British Council аккредитацияланған діл мектептері</h3>
+                        <h3>British Council аккредитацияланған тіл мектептері</h3>
                         <p>Сапалы білім беру стандарттары және халықаралық танымалдылық</p>
                     </div>
                     <div class="feature-card">
