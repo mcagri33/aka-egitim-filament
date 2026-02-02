@@ -353,6 +353,22 @@ class HomepageContentSeeder extends Seeder
                 'url' => '/almanya-universite',
                 'order' => 4
             ],
+            [
+                'title_kk' => 'YÖS',
+                'title_ru' => 'YÖS',
+                'title_en' => 'YÖS',
+                'title_tr' => 'YÖS',
+                'url' => 'https://yosacademy.kz',
+                'order' => 5
+            ],
+            [
+                'title_kk' => 'Түркия гранттары',
+                'title_ru' => 'Турецкие стипендии',
+                'title_en' => 'Turkey Scholarships',
+                'title_tr' => 'Türkiye Bursları',
+                'url' => 'https://yosacademy.kz',
+                'order' => 6
+            ],
         ];
 
         foreach ($universiteItems as $itemData) {
