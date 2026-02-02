@@ -14,7 +14,9 @@
         </div>
         
         <div class="stats-main">
-            <div class="globe-icon"></div>
+            <div class="globe-icon">
+                <img src="{{ asset('storage/banners/dunya.webp') }}" alt="Dünya" class="globe-icon-img" onerror="this.style.display='none'">
+            </div>
             
             
             <div class="stat-card stat-card-left stat-card-left-top">

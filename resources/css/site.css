@@ -594,7 +594,7 @@ button {
     transform: translateX(-50%);
     width: 240px;
     height: 240px;
-    background: var(--color-white) url('/storage/banners/dunya.webp') center / cover no-repeat;
+    background: var(--color-white);
     border-radius: 50%;
     padding: 10px;
     z-index: 5;
@@ -603,6 +603,13 @@ button {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+.globe-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .globe-icon::before {
