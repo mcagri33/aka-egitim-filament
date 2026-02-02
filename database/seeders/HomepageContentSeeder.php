@@ -121,10 +121,13 @@ class HomepageContentSeeder extends Seeder
             ['name' => 'Ana Menü']
         );
 
+        // Eski Dil Okulları linkini PathwayCareers yönlendirmesine güncelle (tekrarlı kayıt önlemi)
+        MenuItem::where('menu_id', $headerMenu->id)->where('url', '/dil-okullari')->update(['url' => 'https://pathwaycareers.org']);
+
         $headerMenuItems = [
             ['title_kk' => 'Басты бет', 'title_ru' => 'Главная', 'title_en' => 'Home', 'title_tr' => 'Ana Sayfa', 'url' => '/', 'order' => 1],
             ['title_kk' => 'Біз туралы', 'title_ru' => 'О нас', 'title_en' => 'About Us', 'title_tr' => 'Hakkımızda', 'url' => '/hakkimizda', 'order' => 2],
-            ['title_kk' => 'Тіл мектептері', 'title_ru' => 'Языковые школы', 'title_en' => 'Language Schools', 'title_tr' => 'Dil Okulları', 'url' => '/dil-okullari', 'order' => 3],
+            ['title_kk' => 'Тіл мектептері', 'title_ru' => 'Языковые школы', 'title_en' => 'Language Schools', 'title_tr' => 'Dil Okulları', 'url' => 'https://pathwaycareers.org', 'order' => 3],
             ['title_kk' => 'Университет', 'title_ru' => 'Университет', 'title_en' => 'University', 'title_tr' => 'Üniversite', 'url' => '/universite', 'order' => 4],
             ['title_kk' => 'Мұғалім қозғалысы', 'title_ru' => 'Мобильность учителей', 'title_en' => 'Teacher Mobility', 'title_tr' => 'Öğretmen Hareketliliği', 'url' => '/ogretmen-hareketliligi', 'order' => 5],
             ['title_kk' => 'Байланыс', 'title_ru' => 'Контакты', 'title_en' => 'Contact', 'title_tr' => 'İletişim', 'url' => '/iletisim', 'order' => 6],

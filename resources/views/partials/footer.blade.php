@@ -103,14 +103,16 @@
                                     }
                                     $childTitle = $childTranslation?->title ?? 'Link';
                                     $childUrl = $child->url ?? '#';
+                                    $childExternal = $childUrl !== '#' && (str_starts_with($childUrl, 'http://') || str_starts_with($childUrl, 'https://'));
                                 @endphp
-                                <a href="{{ $childUrl }}">{{ $childTitle }}</a>
+                                <a href="{{ $childUrl }}" @if($childExternal) target="_blank" rel="noopener noreferrer" @endif>{{ $childTitle }}</a>
                             @endforeach
                         @else
                             @php
                                 $itemUrl = $footerItem->url ?? '#';
+                                $itemExternal = $itemUrl !== '#' && (str_starts_with($itemUrl, 'http://') || str_starts_with($itemUrl, 'https://'));
                             @endphp
-                            <a href="{{ $itemUrl }}">{{ $itemTitle }}</a>
+                            <a href="{{ $itemUrl }}" @if($itemExternal) target="_blank" rel="noopener noreferrer" @endif>{{ $itemTitle }}</a>
                         @endif
                     </div>
                 @endforeach

@@ -11,8 +11,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/iletisim', [ContactController::class, 'submit'])->name('contact.submit');
 Route::get('/lang/{code}', [LanguageController::class, 'switch'])->name('language.switch');
 
-// Dil Okulları sayfası
-Route::get('/dil-okullari', [PageController::class, 'languageSchools'])->name('language-schools');
+// Dil Okulları → PathwayCareers.org yönlendirmesi
+Route::redirect('/dil-okullari', 'https://pathwaycareers.org', 302)->name('language-schools');
 
 // Üniversite sayfası
 Route::get('/universite', [PageController::class, 'university'])->name('university');
