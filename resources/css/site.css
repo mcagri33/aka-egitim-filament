@@ -1133,7 +1133,9 @@ button {
 /* Home FAQ Section */
 .home-faq-section {
     padding: 60px 0 80px;
-    background: var(--color-light-gray);
+    background: linear-gradient(180deg, #f8f2f4 0%, #f0e8eb 100%);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .home-faq-title {
