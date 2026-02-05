@@ -6,9 +6,13 @@
 }
 
 :root {
+    /* Ana palet: Bordo + uyumlu teal + vurgu (terracotta) */
     --color-burgundy: #5b1022;
-    --color-teal: #209990;
-    --color-orange: #f26622;
+    --color-burgundy-dark: #4a0d1a;
+    --color-teal: #1a6b6b;
+    --color-teal-light: #207a7a;
+    --color-orange: #b85c38;
+    --color-orange-light: #c45c2a;
     --color-dark-gray: #1a1a1a;
     --color-white: #ffffff;
     --color-light-gray: #f5f5f5;
@@ -448,7 +452,7 @@ button {
 }
 
 .btn-primary:hover {
-    background: #e55a1a;
+    background: var(--color-orange-light);
     transform: translateY(-2px);
 }
 
@@ -579,7 +583,7 @@ button {
 }
 
 .stats-main {
-    background: #1da1b8;
+    background: var(--color-teal-light);
     border-radius: 24px;
     padding: 90px 80px 70px;
     position: relative;
@@ -624,7 +628,7 @@ button {
 
 .stat-card {
     position: absolute;
-    background: #0b8aa1;
+    background: var(--color-teal);
     color: var(--color-white);
     padding: 22px 28px;
     border-radius: 18px;
@@ -689,7 +693,7 @@ button {
 }
 
 .stat-card .btn-outline-white:hover {
-    background: #e55a1a;
+    background: var(--color-orange-light);
     transform: translateY(-2px);
 }
 
@@ -719,7 +723,7 @@ button {
 }
 
 .world-map .country {
-    fill: #0b6e7c;
+    fill: var(--color-teal);
     stroke: #ffffff;
     stroke-width: 0.0762;
     cursor: pointer;
@@ -727,13 +731,13 @@ button {
 }
 
 .world-map .country:hover {
-    fill: #1fd1e3;
+    fill: var(--color-teal-light);
 }
 
 .world-map-wrapper .country-active,
 .world-map .country-active {
     fill: #ffffff !important;
-    stroke: #209990 !important;
+    stroke: var(--color-teal) !important;
     stroke-width: 1.5 !important;
     opacity: 1 !important;
 }
@@ -741,7 +745,7 @@ button {
 .world-map-wrapper .country-active:hover,
 .world-map .country-active:hover {
     fill: #f5f5f5 !important;
-    stroke: #1a7a73 !important;
+    stroke: var(--color-teal) !important;
     opacity: 1 !important;
 }
 
@@ -761,13 +765,13 @@ button {
 }
 
 .turkey-map path[name] {
-    fill: #0b6e7c;
+    fill: var(--color-teal);
     cursor: pointer;
     transition: fill 0.25s;
 }
 
 .turkey-map path[name]:hover {
-    fill: #1fd1e3;
+    fill: var(--color-teal-light);
 }
 
 .turkey-map .city-active {
@@ -784,7 +788,7 @@ button {
 }
 
 .banner-box {
-    background: linear-gradient(135deg, #6b0f23, #7a1026);
+    background: linear-gradient(135deg, var(--color-burgundy), var(--color-burgundy-dark));
     border-radius: 24px;
     padding: 60px;
     display: grid;
@@ -818,7 +822,7 @@ button {
 }
 
 .banner-title span {
-    color: #f26622;
+    color: var(--color-orange);
 }
 
 .banner-description {
@@ -1089,7 +1093,7 @@ button {
 }
 
 .btn-instagram:hover {
-    background: #4a0d1a;
+    background: var(--color-burgundy-dark);
 }
 
 .instagram-slider {
@@ -1124,6 +1128,81 @@ button {
 .instagram-item iframe {
     border-radius: 16px;
     display: block;
+}
+
+/* Home FAQ Section */
+.home-faq-section {
+    padding: 60px 0 80px;
+    background: var(--color-light-gray);
+}
+
+.home-faq-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-burgundy);
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.home-faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.home-faq-item {
+    background: var(--color-white);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+.home-faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-burgundy);
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: background 0.2s;
+}
+
+.home-faq-question:hover {
+    background: rgba(91, 17, 34, 0.04);
+}
+
+.home-faq-question-text {
+    flex: 1;
+}
+
+.home-faq-icon {
+    flex-shrink: 0;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--color-teal);
+    transition: transform 0.2s;
+}
+
+.home-faq-item.is-open .home-faq-icon {
+    transform: rotate(45deg);
+}
+
+.home-faq-answer {
+    border-top: 1px solid var(--color-border);
+}
+
+.home-faq-answer-inner {
+    padding: 16px 24px 24px;
+    color: var(--color-text);
+    line-height: 1.8;
+    font-size: 15px;
 }
 
 /* Form Section */
@@ -1652,8 +1731,23 @@ textarea {
     .why-section,
     .instagram-section,
     .form-section,
-    .features-section {
+    .features-section,
+    .home-faq-section {
         padding: 40px 0;
+    }
+    
+    .home-faq-section {
+        padding-bottom: 60px;
+    }
+    
+    .home-faq-question {
+        padding: 16px 18px;
+        font-size: 15px;
+    }
+    
+    .home-faq-answer-inner {
+        padding: 12px 18px 20px;
+        font-size: 14px;
     }
     
     .hero-title {

@@ -129,7 +129,7 @@ class HomepageContentSeeder extends Seeder
             ['title_kk' => 'Біз туралы', 'title_ru' => 'О нас', 'title_en' => 'About Us', 'title_tr' => 'Hakkımızda', 'url' => '/hakkimizda', 'order' => 2],
             ['title_kk' => 'Тіл мектептері', 'title_ru' => 'Языковые школы', 'title_en' => 'Language Schools', 'title_tr' => 'Dil Okulları', 'url' => 'https://pathwaycareers.org', 'order' => 3],
             ['title_kk' => 'Университет', 'title_ru' => 'Университет', 'title_en' => 'University', 'title_tr' => 'Üniversite', 'url' => '/universite', 'order' => 4],
-            ['title_kk' => 'Мұғалім қозғалысы', 'title_ru' => 'Мобильность учителей', 'title_en' => 'Teacher Mobility', 'title_tr' => 'Öğretmen Hareketliliği', 'url' => '/ogretmen-hareketliligi', 'order' => 5],
+            ['title_kk' => 'Оқытушы бағдарламалары', 'title_ru' => 'Мобильность учителей', 'title_en' => 'Teacher Mobility', 'title_tr' => 'Öğretmen Hareketliliği', 'url' => '/ogretmen-hareketliligi', 'order' => 5],
             ['title_kk' => 'Байланыс', 'title_ru' => 'Контакты', 'title_en' => 'Contact', 'title_tr' => 'İletişim', 'url' => '/iletisim', 'order' => 6],
         ];
 
@@ -496,7 +496,7 @@ class HomepageContentSeeder extends Seeder
             'social_linkedin' => 'https://linkedin.com/company/akaegitim',
             'social_youtube' => 'https://youtube.com/akaegitim',
             // Footer metinleri - Kazakça (ana dil)
-            'footer_text_kk' => 'AKA-да білім беруге байланысты әрбір сапар мұғалімнің қатысуымен басталып, мұғалімнің қатысуымен аяқталады. Шетелде білім алу және кеңес беру қызметтеріміз арқылы армандаған біліміңізге қол жеткізіңіз.',
+            'footer_text_kk' => 'AKA Академиясында білім беруге байланысты әрбір сапар мұғалімнің қатысуымен басталып, мұғалімнің қатысуымен аяқталады. Шетелде білім алу және кеңес беру қызметтеріміз арқылы армандаған біліміңізге қол жеткізіңіз.',
             'footer_copyright_kk' => '© 2024 Айхан Коркмаз Білім беру және кеңес беру. Барлық құқықтар қорғалған.',
             // Footer metinleri - Rusça
             'footer_text_ru' => 'В AKA каждое путешествие в образовании начинается с участия учителя и заканчивается с участием учителя. Реализуйте образование своей мечты с нашими услугами по обучению за рубежом и консультированию.',
@@ -510,9 +510,9 @@ class HomepageContentSeeder extends Seeder
             
             // Banner CTA Section - Kazakça
             'banner_cta_pill_kk' => 'Кәсіби кеңес',
-            'banner_cta_title_kk' => 'Армандаған біліміңіз',
-            'banner_cta_title_span_kk' => 'Бір қадам қашықтықта',
-            'banner_cta_description_kk' => 'AKA Білім кәсіби кеңесшілерімізбен кездесіңіз және сізге арналған шетелде білім алу жоспарыңызды құрайық.',
+            'banner_cta_title_kk' => 'Арман еткен біліміңізге',
+            'banner_cta_title_span_kk' => 'бір қадам қалды.',
+            'banner_cta_description_kk' => 'AKA Академиясында кәсіби кеңесшілерімізбен кездесіп, сізге арналған шетелде білім алу жоспарын бірге құрайық.',
             'banner_cta_button_kk' => 'Дереу өтініш беріңіз',
             
             // Banner CTA Section - Rusça
@@ -538,12 +538,12 @@ class HomepageContentSeeder extends Seeder
             
             // Values Section - Kazakça
             'values_title_kk' => 'Біздің құндылықтарымыз',
-            'values_azim_title_kk' => 'Азаматтық',
-            'values_azim_desc_kk' => 'Мақсатқа жету жолында жоспарлы қозғаламыз, процестің барлық кезеңінде сізбен бірге боламыз.',
-            'values_kararlilik_title_kk' => 'Белсенділік',
-            'values_kararlilik_desc_kk' => 'Бағдарлама таңдау, өтініш және виза қадамдарын тәртіппен басқарамыз.',
-            'values_ayricalik_title_kk' => 'Артықшылық',
-            'values_ayricalik_desc_kk' => 'Жекелендірілген кеңес, анық байланыс және жылдам жауап.',
+            'values_azim_title_kk' => 'Асқақтық',
+            'values_azim_desc_kk' => 'Мақсатқа жету жолында жоспарлы түрде қозғалып, процестің барлық кезеңінде сізбен бірге боламыз.',
+            'values_kararlilik_title_kk' => 'Кемелділік',
+            'values_kararlilik_desc_kk' => 'Бағдарлама таңдаудан бастап, өтініш пен виза рәсімдеу кезеңдерін жүйелі түрде басқарамыз.',
+            'values_ayricalik_title_kk' => 'Айрықшылық',
+            'values_ayricalik_desc_kk' => 'Жекелендірілген кеңес, ашық байланыс және жедел кері байланыс.',
             
             // Values Section - Rusça
             'values_title_ru' => 'Наши ценности',
@@ -573,8 +573,8 @@ class HomepageContentSeeder extends Seeder
             'values_ayricalik_desc_tr' => 'Kişiselleştirilmiş danışmanlık, net iletişim ve hızlı geri dönüş.',
             
             // Why Section - Kazakça
-            'why_title_kk' => 'Неге AKA Білім?',
-            'why_description_kk' => 'AKA Білім шетелде білім беру қызметінің негізіне «Мұғалім жетекшілігі» ұстанымын қояды. Студентіңіздің шетелде білім алу сапарына отбасы мүшесіндей шынайы қамқорлықпен қарайды. Үйіңізден әуежайға дейін кеңесші мұғалім сізбен бірге ілесіп жүреді.',
+            'why_title_kk' => 'Неге AKA Академиясы?',
+            'why_description_kk' => 'AKA Академиясы шетелде білім беру қызметінің негізіне «Мұғалім жетекшілігі» ұстанымын қояды. Студентіңіздің шетелде білім алу сапарына отбасы мүшесіндей шынайы қамқорлықпен қарайды. Үйіңізден әуежайға дейін кеңесші мұғалім сізбен бірге ілесіп жүреді.',
             'why_global_title_kk' => 'Жаһандық серіктес желіміз',
             'why_global_desc_kk' => 'Бекітілген мекеме желімізбен бағдарламаларды сенімді түрде салыстырамыз және ең қолайлы бағытты анықтаймыз.',
             'why_tracking_title_kk' => 'Студенттің болашағын бақылау',
@@ -779,6 +779,66 @@ class HomepageContentSeeder extends Seeder
             // Instagram Section - Türkçe
             'instagram_title_tr' => 'Instagram Paylaşımları',
             'instagram_button_tr' => '@aka_egitim',
+
+            // FAQ Section - Kazakça
+            'faq_title_kk' => 'Жиі қойылатын сұрақтар',
+            'faq_1_question_kk' => '1. Балам/мен шетелде жалғыз қалмаймын ба?',
+            'faq_1_answer_kk' => 'Жоқ. Студентке оқу үдерісінің барлық кезеңінде мұғалім жетекшілігімен толық сүйемелдеу көрсетіледі: үйден әуежайға дейін, қабылдау мен тіркеу кеңсесінен оқу орнына дейін.',
+            'faq_2_question_kk' => '2. Қандай елдер мен университеттермен жұмыс істейсіздер?',
+            'faq_2_answer_kk' => 'AKA Академиясы аккредитациядан өткен, дипломы мойындалатын және алдын ала тексерілген серіктес университеттермен ғана жұмыс істейді. Елдер мен оқу орындары бағдарламаға қарай ұсынылады.',
+            'faq_3_question_kk' => '3. Ата-ана оқу барысында қалай хабар алып отырады?',
+            'faq_3_answer_kk' => 'Ата-анамен тұрақты байланыс орнатылады. Студенттің оқу барысы, бейімделуі және жағдайы туралы уақытылы ақпарат беріліп отырады.',
+            'faq_4_question_kk' => '4. Виза немесе құжат мәселесі туындаса не болады?',
+            'faq_4_answer_kk' => 'Құжаттар мен виза рәсімдеу үдерісі AKA Академиясының сүйемелдеуімен жүргізіледі. Күтпеген жағдай туындаса, балама шешімдер ұсынылады.',
+            'faq_5_question_kk' => '5. Университет пен мамандық қалай таңдалады?',
+            'faq_5_answer_kk' => 'Таңдау студенттің қабілеті, қызығушылығы және болашақ жоспары ескеріле отырып, мұғалімнің кәсіби кеңесі арқылы жүзеге асырылады.',
+            'faq_6_question_kk' => '6. Бағдарламаның құны қандай және не кіреді?',
+            'faq_6_answer_kk' => 'Бағдарлама құны елге және оқу түріне байланысты анықталады. Қызмет құрамына кеңес беру, құжаттарды рәсімдеу, оқу орнына орналастыру және сүйемелдеу кіреді. Барлық шарттар алдын ала ашық түсіндіріледі.',
+
+            // FAQ Section - Rusça
+            'faq_title_ru' => 'Часто задаваемые вопросы',
+            'faq_1_question_ru' => '1. Мой ребенок/я не останется один за границей?',
+            'faq_1_answer_ru' => 'Нет. Студенту оказывается полная поддержка под руководством преподавателя на всех этапах учебного процесса: от дома до аэропорта, от приемной и регистрационной службы до места учебы.',
+            'faq_2_question_ru' => '2. С какими странами и университетами вы работаете?',
+            'faq_2_answer_ru' => 'Академия AKA работает только с партнерскими университетами, которые прошли аккредитацию, признаны дипломы и были предварительно проверены. Страны и учебные заведения предлагаются в соответствии с программой.',
+            'faq_3_question_ru' => '3. Как родители получают информацию в процессе учебы?',
+            'faq_3_answer_ru' => 'Устанавливается постоянная связь с родителями. Своевременно предоставляется информация о ходе учебы, адаптации и ситуации студента.',
+            'faq_4_question_ru' => '4. Что происходит, если возникает проблема с визой или документами?',
+            'faq_4_answer_ru' => 'Процесс документирования и оформления визы проводится при поддержке Академии AKA. В случае непредвиденной ситуации предлагаются альтернативные решения.',
+            'faq_5_question_ru' => '5. Как выбираются университет и специальность?',
+            'faq_5_answer_ru' => 'Выбор осуществляется через профессиональную консультацию преподавателя с учетом способностей, интересов и будущих планов студента.',
+            'faq_6_question_ru' => '6. Какова стоимость программы и что входит?',
+            'faq_6_answer_ru' => 'Стоимость программы определяется в зависимости от страны и типа обучения. В состав услуг входят консультирование, оформление документов, размещение в учебном заведении и поддержка. Все условия заранее объясняются открыто.',
+
+            // FAQ Section - İngilizce
+            'faq_title_en' => 'Frequently Asked Questions',
+            'faq_1_question_en' => '1. Will my child/I not be left alone abroad?',
+            'faq_1_answer_en' => 'No. The student receives full support under teacher guidance at all stages of the learning process: from home to airport, from admission and registration office to place of study.',
+            'faq_2_question_en' => '2. Which countries and universities do you work with?',
+            'faq_2_answer_en' => 'AKA Academy works only with partner universities that have been accredited, recognized diplomas and pre-verified. Countries and educational institutions are offered according to the program.',
+            'faq_3_question_en' => '3. How do parents get information during the study process?',
+            'faq_3_answer_en' => 'Constant communication is established with parents. Timely information is provided about the student\'s study progress, adaptation and situation.',
+            'faq_4_question_en' => '4. What happens if a visa or document issue arises?',
+            'faq_4_answer_en' => 'The documentation and visa processing process is carried out with the support of AKA Academy. In case of an unforeseen situation, alternative solutions are offered.',
+            'faq_5_question_en' => '5. How are university and major selected?',
+            'faq_5_answer_en' => 'Selection is carried out through the professional consultation of the teacher, taking into account the student\'s abilities, interests and future plans.',
+            'faq_6_question_en' => '6. What is the cost of the program and what is included?',
+            'faq_6_answer_en' => 'The program cost is determined depending on the country and type of study. The service includes counseling, document processing, placement in educational institution and support. All conditions are explained openly in advance.',
+
+            // FAQ Section - Türkçe
+            'faq_title_tr' => 'Sıkça Sorulan Sorular',
+            'faq_1_question_tr' => '1. Çocuğum/Ben yurt dışında yalnız kalmayacak mı?',
+            'faq_1_answer_tr' => 'Hayır. Öğrenciye eğitim sürecinin tüm aşamalarında öğretmen rehberliğinde tam destek sağlanır: evden havalimanına kadar, kabul ve kayıt ofisinden eğitim yerine kadar.',
+            'faq_2_question_tr' => '2. Hangi ülkeler ve üniversitelerle çalışıyorsunuz?',
+            'faq_2_answer_tr' => 'AKA Akademisi sadece akreditasyondan geçmiş, diploması tanınan ve önceden kontrol edilmiş ortak üniversitelerle çalışır. Ülkeler ve eğitim kurumları programa göre önerilir.',
+            'faq_3_question_tr' => '3. Ebeveynler eğitim sürecinde nasıl bilgi alır?',
+            'faq_3_answer_tr' => 'Ebeveynlerle sürekli iletişim kurulur. Öğrencinin eğitim ilerlemesi, uyumu ve durumu hakkında zamanında bilgi verilir.',
+            'faq_4_question_tr' => '4. Vize veya belge sorunu çıkarsa ne olur?',
+            'faq_4_answer_tr' => 'Belgeler ve vize işlem süreci AKA Akademisi\'nin desteğiyle yürütülür. Beklenmedik durum çıkarsa, alternatif çözümler önerilir.',
+            'faq_5_question_tr' => '5. Üniversite ve bölüm nasıl seçilir?',
+            'faq_5_answer_tr' => 'Seçim öğrencinin yetenekleri, ilgileri ve gelecek planları dikkate alınarak öğretmenin mesleki danışmanlığı aracılığıyla gerçekleştirilir.',
+            'faq_6_question_tr' => '6. Programın maliyeti nedir ve ne dahildir?',
+            'faq_6_answer_tr' => 'Program maliyeti ülkeye ve eğitim türüne göre belirlenir. Hizmet kapsamına danışmanlık, belge işlemleri, eğitim kurumuna yerleştirme ve destek dahildir. Tüm koşullar önceden açıkça açıklanır.',
         ];
 
         foreach ($settings as $key => $value) {

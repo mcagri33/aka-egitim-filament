@@ -93,7 +93,20 @@ class UniversityPageSeeder extends Seeder
                     <a href="/">Басты бет</a> / Университет
                 </div>
                 <h1 class="hero-title">Біздің білім беру бағыттарымыз</h1>
-                <p class="hero-description">Біз шетелде университет оқуға қалайтын қазақ студенттеріне де, Қазақстанда білім алуға қалайтын халықаралық студенттерге де мақсаттарына сәйкес университет орналастыру үшін кеңес қызметін ұсынамыз.</p>
+                <p class="hero-description">Біз шетелде университетте оқуды мақсат еткен қазақ студенттеріне де, Қазақстанда білім алуды көздейтін халықаралық студенттерге де олардың мақсаттарына сәйкес университеттерге орналастыру бойынша кәсіби кеңес қызметін ұсынамыз.</p>
+            </div>
+        </section>
+
+        <section class="university-intro-section">
+            <div class="container">
+                <h2 class="university-intro-title">ОҚУ ОРЫНДАРЫ</h2>
+                <div class="university-intro-underline"></div>
+                <h3 class="university-intro-subtitle">Академиялық кеңес беру және университетке орналастыру</h3>
+                <p>AKA Академиясы студентті үйінен бастап, қабылданған университеттің тіркеу бөліміне дейін мұғалім жетекшілігімен толық сүйемелдейді.</p>
+                <p>Білім беру жолы Қазақстанның барлық өңірінде мұғаліммен басталып, шетелдік университетте мұғалімнің қатысуымен аяқталады.</p>
+                <p>Университет пен мамандық таңдау студенттің қабілеті мен қызығушылығына сай жүзеге асырылады.</p>
+                <p>AKA Академиясы серіктес елдер мен университеттердің оқу бағдарламаларын, ресми сәйкестігін, аккредитациясын және дипломдардың мойындалуын алдын ала тексереді.</p>
+                <p>Бағдарламаға енгізілген барлық оқу орындары біздің мұғалімдеріміз барып көрген, танысқан және сенімді деп танылған университеттер.</p>
             </div>
         </section>
 
@@ -140,7 +153,7 @@ class UniversityPageSeeder extends Seeder
         <section class="support-section">
             <div class="container">
                 <h2 class="support-title">Өтініш процесінде қалай көмектесеміз?</h2>
-                <p class="support-intro">AKA Білім беру ретінде біз бағдарлама салыстыру, өтініш кестесін жоспарлау, мотивациялық хат дайындау, грант және қаржылық жоспарлау, студент визасы және тұру орны процестерінің әрбір қадамында сізбен біргеміз. Біз процесті ашық түрде басқарып, құжаттарыңыздың толық және уақытында жіберілуін қамтамасыз етеміз.</p>
+                <p class="support-intro">AKA Академиясы ретінде біз бағдарлама салыстыру, өтініш кестесін жоспарлау, мотивациялық хат дайындау, грант және қаржылық жоспарлау, студент визасы және тұру орны процестерінің әрбір қадамында сізбен біргеміз. Біз процесті ашық түрде басқарып, құжаттарыңыздың толық және уақытында жіберілуін қамтамасыз етеміз.</p>
                 <div class="support-steps">
                     <div class="support-step">
                         <div class="step-number">1</div>
@@ -180,6 +193,19 @@ class UniversityPageSeeder extends Seeder
                 </div>
                 <h1 class="hero-title">Наши направления образования</h1>
                 <p class="hero-description">Мы предлагаем услуги консультирования по размещению в университетах, соответствующих целям, как казахстанским студентам, желающим учиться за границей, так и международным студентам, желающим учиться в Казахстане.</p>
+            </div>
+        </section>
+
+        <section class="university-intro-section">
+            <div class="container">
+                <h2 class="university-intro-title">УЧЕБНЫЕ ЗАВЕДЕНИЯ</h2>
+                <div class="university-intro-underline"></div>
+                <h3 class="university-intro-subtitle">Академическое консультирование и размещение в университетах</h3>
+                <p>Академия AKA полностью сопровождает студента от дома до регистрационного отдела принятого университета под руководством преподавателя.</p>
+                <p>Образовательный путь начинается с преподавателем во всех регионах Казахстана и завершается с участием преподавателя в зарубежном университете.</p>
+                <p>Выбор университета и специальности осуществляется в соответствии со способностями и интересами студента.</p>
+                <p>Академия AKA предварительно проверяет учебные программы, официальное соответствие, аккредитацию и признание дипломов партнерских стран и университетов.</p>
+                <p>Все учебные заведения, включенные в программу, - это университеты, которые наши преподаватели посетили, с которыми познакомились и признали надежными.</p>
             </div>
         </section>
 
@@ -269,6 +295,19 @@ class UniversityPageSeeder extends Seeder
             </div>
         </section>
 
+        <section class="university-intro-section">
+            <div class="container">
+                <h2 class="university-intro-title">EDUCATIONAL INSTITUTIONS</h2>
+                <div class="university-intro-underline"></div>
+                <h3 class="university-intro-subtitle">Academic counseling and university placement</h3>
+                <p>AKA Academy fully supports the student from home to the registration office of the accepted university under teacher guidance.</p>
+                <p>The educational journey begins with a teacher in all regions of Kazakhstan and concludes with the participation of a teacher at a foreign university.</p>
+                <p>University and major selection is carried out according to the student\'s abilities and interests.</p>
+                <p>AKA Academy pre-verifies the curricula, official compliance, accreditation and diploma recognition of partner countries and universities.</p>
+                <p>All educational institutions included in the program are universities that our teachers have visited, become acquainted with and recognized as trustworthy.</p>
+            </div>
+        </section>
+
         <section class="destinations-section">
             <div class="container">
                 <h2 class="section-title">Education Destinations</h2>
@@ -352,6 +391,19 @@ class UniversityPageSeeder extends Seeder
                 </div>
                 <h1 class="hero-title">Eğitim Destinasyonlarımız</h1>
                 <p class="hero-description">Hem yurt dışında üniversite okumak isteyen öğrencilere hem de ülkemizde eğitim almak isteyen uluslararası öğrencilere hedeflerine uygun üniversite yerleşimi için rehberlik hizmeti sunuyoruz.</p>
+            </div>
+        </section>
+
+        <section class="university-intro-section">
+            <div class="container">
+                <h2 class="university-intro-title">ÖĞRENİM KURUMLARI</h2>
+                <div class="university-intro-underline"></div>
+                <h3 class="university-intro-subtitle">Akademik danışmanlık ve üniversiteye yerleştirme</h3>
+                <p>AKA Akademisi, öğrenciyi evinden kabul edilen üniversitenin kayıt ofisine kadar öğretmen rehberliğinde tam destek sağlar.</p>
+                <p>Eğitim yolculuğu Kazakistan\'ın tüm bölgelerinde öğretmenle başlar ve yurt dışındaki üniversitede öğretmenin katılımıyla tamamlanır.</p>
+                <p>Üniversite ve bölüm seçimi öğrencinin yetenekleri ve ilgi alanlarına göre yapılır.</p>
+                <p>AKA Akademisi ortak ülkeler ve üniversitelerin eğitim programlarını, resmi uygunluğunu, akreditasyonunu ve diplomaların tanınmasını önceden kontrol eder.</p>
+                <p>Programa dahil edilen tüm eğitim kurumları, öğretmenlerimizin gidip gördüğü, tanıştığı ve güvenilir bulduğu üniversitelerdir.</p>
             </div>
         </section>
 

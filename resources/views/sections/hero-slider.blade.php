@@ -2,6 +2,12 @@
     $banners = \App\Models\Banner::where('is_active', true)->orderBy('order')->get();
     $currentLocale = session('locale', \App\Models\Language::where('is_default', true)->first()?->code ?? 'kk');
     $currentLanguage = \App\Models\Language::where('code', $currentLocale)->first();
+    $programsButtonText = [
+        'kk' => 'Бағдарламаларды қарап шық',
+        'ru' => 'Обзор программ',
+        'en' => 'Browse Programs',
+        'tr' => 'Programları İncele',
+    ][$currentLocale] ?? 'Programları İncele';
 @endphp
 
 <section class="hero-slider">
@@ -22,7 +28,7 @@
                         @else
                             <a href="#iletisim" class="btn btn-primary">Ücretsiz Danışmanlık →</a>
                         @endif
-                        <a href="#programlar" class="btn btn-secondary">Programları İncele</a>
+                        <a href="#programlar" class="btn btn-secondary">{{ $programsButtonText }}</a>
                     </div>
                 @else
                     <p class="hero-eyebrow">Öğretmen Dokunuşuyla</p>
@@ -30,7 +36,7 @@
                     <p class="hero-description">AKA'da eğitime dair her yolculuk bir öğretmen eşliğinde başlar ve öğretmen eşliğinde tamamlanır.</p>
                     <div class="hero-buttons">
                         <a href="#iletisim" class="btn btn-primary">Ücretsiz Danışmanlık →</a>
-                        <a href="#programlar" class="btn btn-secondary">Programları İncele</a>
+                        <a href="#programlar" class="btn btn-secondary">{{ $programsButtonText }}</a>
                     </div>
                 @endif
                 <div class="slider-dots">

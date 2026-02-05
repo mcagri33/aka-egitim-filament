@@ -39,7 +39,7 @@
         if (strpos($svgContent, '<defs>') === false) {
             $svgContent = preg_replace(
                 '/(<svg[^>]*>)/i',
-                '$1<defs><style type="text/css">.country { fill: #e0e0e0; stroke: #cccccc; stroke-width: 0.2; cursor: pointer; transition: fill 0.3s; opacity: 0.6; } .country:hover { fill: #d0d0d0; opacity: 0.8; } .country-active { fill: #ffffff !important; stroke: #209990 !important; stroke-width: 1.5 !important; opacity: 1 !important; } .country-active:hover { fill: #f5f5f5 !important; stroke: #1a7a73 !important; opacity: 1 !important; }</style></defs>',
+                '$1<defs><style type="text/css">.country { fill: #e0e0e0; stroke: #cccccc; stroke-width: 0.2; cursor: pointer; transition: fill 0.3s; opacity: 0.6; } .country:hover { fill: #d0d0d0; opacity: 0.8; } .country-active { fill: #ffffff !important; stroke: #1a6b6b !important; stroke-width: 1.5 !important; opacity: 1 !important; } .country-active:hover { fill: #f5f5f5 !important; stroke: #1a6b6b !important; opacity: 1 !important; }</style></defs>',
                 $svgContent
             );
         }
@@ -73,7 +73,7 @@
                 );
                 // Fill, stroke, class ve data-country ekle
                 $pattern = '/(<path[^>]*id="' . preg_quote($id, '/') . '"[^>]*)(>)/i';
-                $replacement = '$1 fill="#ffffff" stroke="#209990" stroke-width="1.5" class="country country-active" data-country="' . $code . '"$2';
+                $replacement = '$1 fill="#ffffff" stroke="#1a6b6b" stroke-width="1.5" class="country country-active" data-country="' . $code . '"$2';
                 $svgContent = preg_replace($pattern, $replacement, $svgContent);
             }
             
@@ -100,7 +100,7 @@
                 );
                 // Class'ı güncelle, fill, stroke ve data-country ekle
                 $pattern = '/(<path[^>]*class=")([^"]*' . preg_quote($className, '/') . '[^"]*)(")/i';
-                $replacement = '$1$2 country country-active$3 fill="#ffffff" stroke="#209990" stroke-width="1.5" data-country="' . $code . '"';
+                $replacement = '$1$2 country country-active$3 fill="#ffffff" stroke="#1a6b6b" stroke-width="1.5" data-country="' . $code . '"';
                 $svgContent = preg_replace($pattern, $replacement, $svgContent);
             }
         }

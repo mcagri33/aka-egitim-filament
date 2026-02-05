@@ -11,4 +11,5 @@
     @include('sections.contact-section')
     @include('sections.features-section')
     @include('sections.instagram-section')
+    @include('sections.faq-section')
 @endsection

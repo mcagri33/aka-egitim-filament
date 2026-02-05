@@ -18,7 +18,7 @@
     if (!$tagline) {
         // Fallback tagline'lar
         $taglines = [
-            'kk' => 'Azim, Қажырлылық, Артықшылық',
+            'kk' => 'AKA – Асқақтық. Кемелділік. Айрықшылық.',
             'ru' => 'Решимость, Решительность, Привилегия',
             'en' => 'Determination, Resolution, Privilege',
             'tr' => 'Azim, Kararlılık, Ayrıcalık'

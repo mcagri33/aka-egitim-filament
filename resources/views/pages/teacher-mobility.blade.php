@@ -125,6 +125,76 @@
         transform: translateY(-2px);
     }
     
+    /* Programs Intro Section (Оқытушыларға арналған халықаралық бағдарламалар) */
+    .programs-intro-section {
+        padding: 70px 0;
+        background: var(--color-white);
+    }
+    
+    .programs-intro-section .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 32px;
+        background: var(--color-white);
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        border: 1px solid var(--color-border);
+    }
+    
+    .programs-intro-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--color-burgundy);
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+    
+    .programs-intro-underline {
+        width: 80px;
+        height: 4px;
+        background: var(--color-orange);
+        border-radius: 2px;
+        margin-bottom: 24px;
+    }
+    
+    .programs-intro-text {
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--color-text);
+        margin-bottom: 20px;
+    }
+    
+    .programs-intro-subtitle {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--color-teal);
+        margin-bottom: 14px;
+    }
+    
+    .programs-intro-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .programs-intro-list li {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--color-text);
+    }
+    
+    .programs-intro-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--color-teal);
+        font-weight: 700;
+        font-size: 18px;
+    }
+    
     /* What Is Section */
     .what-is-section {
         padding: 80px 0;
@@ -276,7 +346,7 @@
     }
     
     .submit-button {
-        background: linear-gradient(135deg, var(--color-teal), #1a7a73);
+        background: linear-gradient(135deg, var(--color-teal), var(--color-teal-light));
         color: white;
         padding: 16px 40px;
         border: none;

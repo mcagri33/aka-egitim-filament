@@ -96,7 +96,7 @@ class ContactPageSeeder extends Seeder
                 <p class="hero-description">Тегін консультация алыңыз. Ең қолайлы білім беру бағдарламаларын бірге таңдайық.</p>
                 <div class="hero-buttons">
                     <a href="#form" class="hero-button hero-button-primary">Тегін консультация алыңыз</a>
-                    <a href="#programs" class="hero-button hero-button-secondary">Бағдарламаларға шолу</a>
+                    <a href="#programs" class="hero-button hero-button-secondary">Бағдарламаларды қарап шық</a>
                 </div>
             </div>
         </section>
@@ -176,7 +176,7 @@ class ContactPageSeeder extends Seeder
                                         <option value="">Таңдаңыз</option>
                                         <option value="dil-okulu">Діл мектебі</option>
                                         <option value="universite">Университет</option>
-                                        <option value="ogretmen-hareketliligi">Мұғалім қозғалысы</option>
+                                        <option value="ogretmen-hareketliligi">Оқытушы бағдарламалары</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

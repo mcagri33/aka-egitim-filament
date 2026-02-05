@@ -246,7 +246,7 @@
     }
     
     .submit-button {
-        background: linear-gradient(135deg, var(--color-teal), #1a7a73);
+        background: linear-gradient(135deg, var(--color-teal), var(--color-teal-light));
         color: white;
         padding: 16px 40px;
         border: none;

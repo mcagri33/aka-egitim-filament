@@ -30,10 +30,10 @@ class TeacherMobilityPageSeeder extends Seeder
         // Kazakh Content
         if ($languages->has('kk')) {
             $this->createTranslation($page, $languages['kk'], [
-                'title' => 'Мұғалім қозғалысы',
+                'title' => 'Оқытушы бағдарламалары',
                 'slug' => 'ogretmen-hareketliligi',
                 'content' => $this->getKazakhContent(),
-                'seo_title' => 'Мұғалім қозғалысы - AKA Академиясы',
+                'seo_title' => 'Оқытушы бағдарламалары - AKA Академиясы',
                 'seo_description' => 'Шетелде мұғалім дайындығы және кәсіби даму мүмкіндіктері',
             ]);
         }
@@ -90,9 +90,9 @@ class TeacherMobilityPageSeeder extends Seeder
         return '<section class="teacher-mobility-hero">
             <div class="container">
                 <div class="hero-breadcrumb">
-                    <a href="/">Басты бет</a> / Мұғалім қозғалысы
+                    <a href="/">Басты бет</a> / Оқытушы бағдарламалары
                 </div>
-                <h1 class="hero-title">Мұғалім қозғалысы</h1>
+                <h1 class="hero-title">Оқытушы бағдарламалары</h1>
                 <p class="hero-description">Шетелде мұғалім дайындығы және кәсіби даму мүмкіндіктері. CELTA, DELTA, TESOL сертификаттары және Erasmus+ бағдарламалары арқылы мансабыңызды халықаралық деңгейде дамытыңыз.</p>
             </div>
         </section>
@@ -120,10 +120,24 @@ class TeacherMobilityPageSeeder extends Seeder
             </div>
         </section>
 
+        <section class="programs-intro-section">
+            <div class="container">
+                <h2 class="programs-intro-title">Оқытушыларға арналған халықаралық бағдарламалар</h2>
+                <div class="programs-intro-underline"></div>
+                <p class="programs-intro-text">АКА Академиясы оқытушылардың үздіксіз кәсіби дамуын білім сапасының негізгі кепілі ретінде қарастырады.</p>
+                <p class="programs-intro-subtitle">Осы бағытта:</p>
+                <ul class="programs-intro-list">
+                    <li>тақырыптық халықаралық стажировкалар</li>
+                    <li>университеттермен бірлескен сертификаттық бағдарламалар</li>
+                    <li>халықаралық деңгейде мойындалған кәсіби курстар ұйымдастырылады.</li>
+                </ul>
+            </div>
+        </section>
+
         <section class="what-is-section">
             <div class="container">
-                <h2 class="what-is-title">Мұғалім қозғалысы деген не?</h2>
-                <p class="what-is-intro">Мұғалім қозғалысы бағдарламалары - бұл білім берушілердің шетелде білім беру әдістерін үйренуі, сертификат алуы және кәсіби дамуын жалғастыруы үшін жасалған бағдарламалар. AKA Білім беру ретінде біз мұғалімдердің мансаптарын халықаралық деңгейде дамытуына көмектесеміз.</p>
+                <h2 class="what-is-title">Оқытушы бағдарламалары деген не?</h2>
+                <p class="what-is-intro">Оқытушы бағдарламалары - бұл білім берушілердің шетелде білім беру әдістерін үйренуі, сертификат алуы және кәсіби дамуын жалғастыруы үшін жасалған бағдарламалар. AKA Академиясы ретінде біз мұғалімдердің мансаптарын халықаралық деңгейде дамытуына көмектесеміз.</p>
                 <ul class="what-is-steps">
                     <li class="what-is-step">
                         <div class="step-number">1</div>
@@ -280,6 +294,20 @@ class TeacherMobilityPageSeeder extends Seeder
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="programs-intro-section">
+            <div class="container">
+                <h2 class="programs-intro-title">Международные программы для учителей</h2>
+                <div class="programs-intro-underline"></div>
+                <p class="programs-intro-text">Академия AKA рассматривает непрерывное профессиональное развитие учителей как основную гарантию качества образования.</p>
+                <p class="programs-intro-subtitle">В этом направлении:</p>
+                <ul class="programs-intro-list">
+                    <li>тематические международные стажировки</li>
+                    <li>сертификационные программы совместно с университетами</li>
+                    <li>организуются профессиональные курсы, признанные на международном уровне.</li>
+                </ul>
             </div>
         </section>
 
@@ -446,6 +474,20 @@ class TeacherMobilityPageSeeder extends Seeder
             </div>
         </section>
 
+        <section class="programs-intro-section">
+            <div class="container">
+                <h2 class="programs-intro-title">International Programs for Teachers</h2>
+                <div class="programs-intro-underline"></div>
+                <p class="programs-intro-text">AKA Academy considers the continuous professional development of teachers as the main guarantee of educational quality.</p>
+                <p class="programs-intro-subtitle">In this direction:</p>
+                <ul class="programs-intro-list">
+                    <li>thematic international internships</li>
+                    <li>certificate programs in cooperation with universities</li>
+                    <li>internationally recognized professional courses are organized.</li>
+                </ul>
+            </div>
+        </section>
+
         <section class="what-is-section">
             <div class="container">
                 <h2 class="what-is-title">What is Teacher Mobility?</h2>
@@ -606,6 +648,20 @@ class TeacherMobilityPageSeeder extends Seeder
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="programs-intro-section">
+            <div class="container">
+                <h2 class="programs-intro-title">Öğretmenlere Yönelik Uluslararası Programlar</h2>
+                <div class="programs-intro-underline"></div>
+                <p class="programs-intro-text">AKA Akademisi, öğretmenlerin sürekli mesleki gelişimini eğitim kalitesinin temel güvencesi olarak görür.</p>
+                <p class="programs-intro-subtitle">Bu doğrultuda:</p>
+                <ul class="programs-intro-list">
+                    <li>tematik uluslararası stajlar</li>
+                    <li>üniversitelerle ortak sertifikasyon programları</li>
+                    <li>uluslararası düzeyde tanınan mesleki kurslar düzenlenir.</li>
+                </ul>
             </div>
         </section>
 

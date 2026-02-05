@@ -227,7 +227,7 @@
         top: 30px;
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, var(--color-teal), #1a7a73);
+        background: linear-gradient(135deg, var(--color-teal), var(--color-teal));
         color: white;
         border-radius: 50%;
         display: flex;
@@ -293,7 +293,7 @@
     
     /* Contact Section */
     .page-body .contact-section {
-        background: linear-gradient(135deg, var(--color-teal) 0%, #1a7a73 100%);
+        background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal) 100%);
         padding: 50px;
         border-radius: 16px;
         color: white;

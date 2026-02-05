@@ -94,7 +94,35 @@ class LanguageSchoolsPageSeeder extends Seeder
                 </div>
                 <h1 class="hero-title">Ұлыбритания тіл мектебі бағдарламалары</h1>
                 <p class="hero-description">Ұлыбританияда ағылшын тілін үйреніңіз, мәдениетімен танысыңыз және British Council бекіткен тіл мектептерінде білім алыңыз.</p>
-                <a href="#programs" class="hero-cta">Бағдарламаларды қарау</a>
+                <a href="#programs" class="hero-cta">Бағдарламаларды қарап шық</a>
+            </div>
+        </section>
+
+        <section class="language-intro-section">
+            <div class="container">
+                <h2 class="language-intro-title">Тіл курстары</h2>
+                <div class="language-intro-underline"></div>
+                <h3 class="language-intro-subtitle">Тіл мектептері және даму бағдарламалары</h3>
+                <h4 class="language-intro-question">Неліктен тіл үйрену тәжірибесі маңызды?</h4>
+                <ul class="language-intro-list">
+                    <li>Тіл тек аудиторияда емес, нақты өмірде қолдану арқылы меңгеріледі</li>
+                    <li>Оқушылар тілді өз ортасында, құрдастарымен қарым-қатынас арқылы тәжірибеде қолданады</li>
+                    <li>Бағдарлама тілмен қатар сол елдің мәдениеті мен қалалық ортасын тануға бағытталған</li>
+                    <li>Тіл дамуы тәулігіне 24 сағаттық тәжірибе мен өзара әрекетке негізделген</li>
+                    <li>Қаланың тарихи және маңызды орындары сол елдің тілі арқылы танылады</li>
+                </ul>
+                <h4 class="language-intro-heading">Оқу үдерісі:</h4>
+                <ul class="language-intro-list">
+                    <li>Қазақстаннан барған мұғаліммен басталады</li>
+                    <li>Қабылдаушы елдегі кәсіби тіл маманының жетекшілігімен жалғасады</li>
+                </ul>
+                <h4 class="language-intro-heading">Бағдарлама нәтижесінде оқушы:</h4>
+                <ul class="language-intro-list">
+                    <li>тіл қолдану қабілетін дамытады</li>
+                    <li>өзіне деген сенімін арттырады</li>
+                    <li>дүниетанымын кеңейтіп, саналы тұлға ретінде қалыптасады</li>
+                </ul>
+                <p class="language-intro-note"><strong>AKA-ның басты айырмашылығы</strong> – оқушымен тәулік бойы бірге болып, оқу мен өмірді ұштастыра алатын өз еліміздің мұғалімінің тұрақты жетекшілігі.</p>
             </div>
         </section>
 
@@ -264,7 +292,7 @@ class LanguageSchoolsPageSeeder extends Seeder
                         <p class="cta-description">Біздің маман командамен байланысыңыз және сізге ең қолайлы бағдарламаны бірге анықтайық. Біздің тегін кеңес қызметімізден пайдаланыңыз.</p>
                         <div class="cta-buttons">
                             <a href="/iletisim" class="cta-button cta-button-primary">Тегін кеңес</a>
-                            <a href="#programs" class="cta-button cta-button-secondary">Бағдарламаларды қарау</a>
+                            <a href="#programs" class="cta-button cta-button-secondary">Бағдарламаларды қарап шық</a>
                         </div>
                     </div>
                     <div>
@@ -285,6 +313,34 @@ class LanguageSchoolsPageSeeder extends Seeder
                 <h1 class="hero-title">Программы языковых школ Великобритании</h1>
                 <p class="hero-description">Изучайте английский язык в Великобритании, познакомьтесь с культурой и учитесь в языковых школах, аккредитованных British Council.</p>
                 <a href="#programs" class="hero-cta">Просмотреть программы</a>
+            </div>
+        </section>
+
+        <section class="language-intro-section">
+            <div class="container">
+                <h2 class="language-intro-title">Языковые курсы</h2>
+                <div class="language-intro-underline"></div>
+                <h3 class="language-intro-subtitle">Языковые школы и программы развития</h3>
+                <h4 class="language-intro-question">Почему важна практика изучения языка?</h4>
+                <ul class="language-intro-list">
+                    <li>Язык осваивается не в аудитории, а через использование в реальной жизни</li>
+                    <li>Учащиеся используют язык на практике в своей среде, общаясь со сверстниками</li>
+                    <li>Программа направлена на знакомство не только с языком, но и с культурой и городской средой этой страны</li>
+                    <li>Развитие языка основано на 24-часовом опыте и взаимодействии в день</li>
+                    <li>Исторические и важные места города познаются на языке этой страны</li>
+                </ul>
+                <h4 class="language-intro-heading">Учебный процесс:</h4>
+                <ul class="language-intro-list">
+                    <li>Начинается с преподавателя, приехавшего из Казахстана</li>
+                    <li>Продолжается под руководством профессионального языкового специалиста принимающей страны</li>
+                </ul>
+                <h4 class="language-intro-heading">В результате программы учащийся:</h4>
+                <ul class="language-intro-list">
+                    <li>развивает способность использовать язык</li>
+                    <li>повышает уверенность в себе</li>
+                    <li>расширяет мировоззрение и формируется как сознательная личность</li>
+                </ul>
+                <p class="language-intro-note"><strong>Главное отличие AKA</strong> – постоянное руководство нашего преподавателя, который может быть со студентом 24 часа в сутки и сочетать учебу и жизнь.</p>
             </div>
         </section>
 
@@ -478,6 +534,34 @@ class LanguageSchoolsPageSeeder extends Seeder
             </div>
         </section>
 
+        <section class="language-intro-section">
+            <div class="container">
+                <h2 class="language-intro-title">Language Courses</h2>
+                <div class="language-intro-underline"></div>
+                <h3 class="language-intro-subtitle">Language Schools and Development Programs</h3>
+                <h4 class="language-intro-question">Why is language learning experience important?</h4>
+                <ul class="language-intro-list">
+                    <li>Language is mastered not in the classroom, but through use in real life</li>
+                    <li>Students use the language in practice in their environment, communicating with peers</li>
+                    <li>The program is aimed at getting to know not only the language but also the culture and urban environment of that country</li>
+                    <li>Language development is based on 24-hour experience and interaction per day</li>
+                    <li>Historical and important places of the city are learned through the language of that country</li>
+                </ul>
+                <h4 class="language-intro-heading">Learning Process:</h4>
+                <ul class="language-intro-list">
+                    <li>Starts with a teacher who came from Kazakhstan</li>
+                    <li>Continues under the guidance of a professional language specialist in the host country</li>
+                </ul>
+                <h4 class="language-intro-heading">As a result of the program, the student:</h4>
+                <ul class="language-intro-list">
+                    <li>develops language use ability</li>
+                    <li>increases self-confidence</li>
+                    <li>expands worldview and forms as a conscious personality</li>
+                </ul>
+                <p class="language-intro-note"><strong>The main difference of AKA</strong> – constant guidance of our teacher who can be with the student 24 hours a day and combine study and life.</p>
+            </div>
+        </section>
+
         <section class="why-language-section">
             <div class="container">
                 <h2 class="section-title">Why UK Language Education?</h2>
@@ -665,6 +749,34 @@ class LanguageSchoolsPageSeeder extends Seeder
                 <h1 class="hero-title">İngiltere Dil Okulu Programları</h1>
                 <p class="hero-description">İngiltere\'de İngilizce öğrenin, kültürü yaşayın ve British Council onaylı dil okullarında eğitim alın.</p>
                 <a href="#programs" class="hero-cta">Programları İncele</a>
+            </div>
+        </section>
+
+        <section class="language-intro-section">
+            <div class="container">
+                <h2 class="language-intro-title">Dil Kursları</h2>
+                <div class="language-intro-underline"></div>
+                <h3 class="language-intro-subtitle">Dil Okulları ve Gelişim Programları</h3>
+                <h4 class="language-intro-question">Neden dil öğrenme deneyimi önemlidir?</h4>
+                <ul class="language-intro-list">
+                    <li>Dil sadece sınıfta değil, gerçek hayatta kullanım yoluyla öğrenilir</li>
+                    <li>Öğrenciler dili kendi ortamlarında, akranlarıyla iletişim kurarak pratikte kullanır</li>
+                    <li>Program sadece dil ile değil, o ülkenin kültürü ve kentsel ortamını tanımaya yöneliktir</li>
+                    <li>Dil gelişimi günde 24 saatlik deneyim ve karşılıklı etkileşime dayanır</li>
+                    <li>Şehrin tarihi ve önemli yerleri o ülkenin dili aracılığıyla tanınır</li>
+                </ul>
+                <h4 class="language-intro-heading">Eğitim Süreci:</h4>
+                <ul class="language-intro-list">
+                    <li>Kazakistan\'dan gelen öğretmenle başlar</li>
+                    <li>Ev sahibi ülkedeki profesyonel dil uzmanının rehberliğinde devam eder</li>
+                </ul>
+                <h4 class="language-intro-heading">Program sonucunda öğrenci:</h4>
+                <ul class="language-intro-list">
+                    <li>dil kullanma yeteneğini geliştirir</li>
+                    <li>kendine güvenini artırır</li>
+                    <li>dünya görüşünü genişletir ve bilinçli kişilik olarak şekillenir</li>
+                </ul>
+                <p class="language-intro-note"><strong>AKA\'nın ana farkı</strong> – öğrenciyle gün boyu birlikte olup, eğitim ve yaşamı birleştirebilen kendi ülkemizin öğretmeninin sürekli rehberliğidir.</p>
             </div>
         </section>
 

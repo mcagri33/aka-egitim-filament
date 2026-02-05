@@ -51,6 +51,53 @@
         color: rgba(255,255,255,0.95);
     }
     
+    /* University Intro Section (ОҚУ ОРЫНДАРЫ) */
+    .university-intro-section {
+        padding: 70px 0;
+        background: var(--color-white);
+    }
+    
+    .university-intro-section .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .university-intro-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--color-text);
+        margin-bottom: 12px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+    }
+    
+    .university-intro-underline {
+        width: 80px;
+        height: 4px;
+        background: var(--color-orange);
+        border-radius: 2px;
+        margin-bottom: 24px;
+    }
+    
+    .university-intro-subtitle {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--color-text);
+        margin-bottom: 24px;
+        line-height: 1.4;
+    }
+    
+    .university-intro-section p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--color-text);
+        margin-bottom: 16px;
+    }
+    
+    .university-intro-section p:last-child {
+        margin-bottom: 0;
+    }
+    
     /* Destinations Section */
     .destinations-section {
         padding: 80px 0;
